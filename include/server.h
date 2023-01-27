@@ -12,13 +12,15 @@
 #include "server_command_t.h"
 #include "server_status_t.h"
 
-struct {
+struct SERVER_CFG{
     int active;
     char* api_url;
-    lcm_t* api_lcm;
+    lcm_t* lcm;
     char* API_CHANNEL;
     char* SRV_CHANNEL;
-} srv_config;
+};
+
+extern struct SERVER_CFG config;
 
 int server_start();
 
