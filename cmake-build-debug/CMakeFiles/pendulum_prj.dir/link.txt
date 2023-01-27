@@ -1,1 +1,0 @@
-/usr/bin/cc -g CMakeFiles/pendulum_prj.dir/src/main.c.o CMakeFiles/pendulum_prj.dir/src/listener.c.o -o pendulum_prj  -Wl,-rpath,/usr/local/lib libmy_lcmtypes.a /usr/local/lib/liblcm.so.1.4.0 
