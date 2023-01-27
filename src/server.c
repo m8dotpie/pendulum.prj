@@ -29,10 +29,10 @@ int server_send_hardware() {
 int server_start() {
     srv_config.active = 1; // server is active now
 
-    srv_config.API_CHANNEL = malloc(sizeof(char) * 7);
-    srv_config.API_CHANNEL = "APIDATA";
-    srv_config.API_CHANNEL = malloc(sizeof(char) * 6);
-    srv_config.API_CHANNEL = "SERVER";
+    srv_config.API_CHANNEL = malloc(sizeof(char) * 3);
+    srv_config.API_CHANNEL = "API";
+    srv_config.SRV_CHANNEL = malloc(sizeof(char) * 6);
+    srv_config.SRV_CHANNEL = "SERVER";
 
     // channel for communication
     srv_config.api_url = malloc(sizeof(char) * 27);
