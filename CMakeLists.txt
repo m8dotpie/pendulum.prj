@@ -3,4 +3,37 @@ project(pendulum_prj C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(pendulum_prj src/main.c)
+find_package(lcm REQUIRED)
+include(${LCM_USE_FILE})
+
+#lcm_wrap_types(
+#        C_EXPORT my_lcmtypes
+#        C_SOURCES c_sources
+#        C_HEADERS c_headers
+#        lcm_packages/example_t.lcm
+#)
+#
+#lcm_add_library(my_lcmtypes C ${c_sources} ${c_headers})
+#include(GenerateExportHeader)
+#generate_export_header(my_lcmtypes)
+#target_include_directories(my_lcmtypes INTERFACE
+#        $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>)
+
+include_directories(include)
+#
+#lcm_install_headers(DESTINATION include
+#        ${CMAKE_CURRENT_BINARY_DIR}/my_lcmtypes_export.h
+#        ${c_install_headers})
+#
+#install(TARGETS my_lcmtypes
+#        EXPORT ${PROJECT_NAME}Targets
+#        RUNTIME DESTINATION bin
+#        LIBRARY DESTINATION lib${LIB_SUFFIX}
+#        ARCHIVE DESTINATION lib${LIB_SUFFIX}
+#        INCLUDES DESTINATION include
+#        )
+
+
+add_executable(pendulum_prj src/main.c src/exlcm_example_t.c)
+
+target_link_libraries(pendulum_prj lcm)

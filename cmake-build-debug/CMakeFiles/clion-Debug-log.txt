@@ -1,0 +1,14 @@
+"/Users/m8dotpie/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8214.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/m8dotpie/Work/pendulum.prj -B /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug
+CMake Deprecation Warning at /usr/local/lib/lcm/cmake/lcmUtilities.cmake:33 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+Call Stack (most recent call first):
+  CMakeLists.txt:7 (include)
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug
