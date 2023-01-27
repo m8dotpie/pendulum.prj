@@ -2,7 +2,6 @@
 #include "exlcm_example_t.h"
 #include <unistd.h>
 #include <stdio.h>
-#include "main.h"
 
 int send_message() {
     lcm_t * lcm = lcm_create(NULL);
@@ -28,8 +27,6 @@ int send_message() {
     return 0;
 }
 
-int
-main(int argc, char ** argv)
-{
+int main(int argc, char ** argv) {
     return send_message();
 }
