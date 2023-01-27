@@ -1,15 +1,15 @@
 package api;
 
 struct command {
-    uint8_t code;
-    char[7] msg;
+    int8_t code;
+    string msg;
 }
 
 struct response {
-    uint16_t p_distance;
-    uint16_t p_angle;
-    uint8_t m_angle;
-    uint16_t m_torque;
-    uint16_t m_speed;
-    uint16_t m_position;
+    int16_t p_distance;
+    int16_t p_angle;
+    int8_t m_angle;
+    int16_t m_torque;
+    int16_t m_speed;
+    int16_t m_position;
 }

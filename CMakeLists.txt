@@ -10,7 +10,8 @@ lcm_wrap_types(
         C_EXPORT my_lcmtypes
         C_SOURCES c_sources
         C_HEADERS c_headers
-        lcm_packages/example_t.lcm
+        lcm_packages/api_pkg.lcm
+        lcm_packages/server_pkg.lcm
 )
 
 lcm_add_library(my_lcmtypes C ${c_sources} ${c_headers})

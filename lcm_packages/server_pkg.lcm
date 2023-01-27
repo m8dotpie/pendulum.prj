@@ -6,7 +6,7 @@ struct command_t
 }
 
 struct error_t {
-    uint8_t code;
-    uint16_t msg_size;
-    char* msg;
+    int8_t code;
+    int16_t msg_size;
+    string msg;
 }
