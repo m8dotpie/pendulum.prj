@@ -6,3 +6,5 @@
 #define PENDULUM_PRJ_LISTENER_H
 
 #endif //PENDULUM_PRJ_LISTENER_H
+
+void listen();

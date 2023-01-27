@@ -4,9 +4,7 @@
 #include <stdio.h>
 #include "main.h"
 
-int
-main(int argc, char ** argv)
-{
+int send_message() {
     lcm_t * lcm = lcm_create(NULL);
     if(!lcm)
         return 1;
@@ -26,4 +24,12 @@ main(int argc, char ** argv)
     exlcm_example_t_publish(lcm, "EXAMPLE", &my_data);
 
     lcm_destroy(lcm);
+
+    return 0;
+}
+
+int
+main(int argc, char ** argv)
+{
+    return send_message();
 }

@@ -7,3 +7,4 @@
 #define PENDULUM_PRJ_MAIN_H
 
 #endif //PENDULUM_PRJ_MAIN_H
+int send_message();

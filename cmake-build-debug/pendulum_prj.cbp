@@ -182,7 +182,7 @@
 		<Unit filename="/home/dom_iva/Programms/pendulum/pendulum.prj/include/listener.h">
 			<Option target="pendulum_prj"/>
 		</Unit>
-		<Unit filename="/home/dom_iva/Programms/pendulum/pendulum.prj/include/main.c.h">
+		<Unit filename="/home/dom_iva/Programms/pendulum/pendulum.prj/include/main.h">
 			<Option target="pendulum_prj"/>
 		</Unit>
 		<Unit filename="/home/dom_iva/Programms/pendulum/pendulum.prj/src/listener.c">

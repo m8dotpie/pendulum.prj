@@ -16,12 +16,10 @@ void handle_message(const lcm_recv_buf_t *rbuf, const char * channel,
            msg->orientation[3]);
 }
 
-int
-main(int argc, char ** argv) {
-    lcm_t * lcm = lcm_create(NULL);
-
-    if (!lcm)
-        return 1;
+void listen (int argc, char ** argv) {
+    lcm_t * lcm = lcm_create("udpm://224.0.0.0:7667?ttl=1");
 
     exlcm_example_t_subscribe(lcm, "EXAMPLE", &handle_message, NULL);
+    while(1)
+        lcm_handle(lcm);
 }
