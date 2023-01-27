@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"/Users/m8dotpie/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8214.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"/Users/m8dotpie/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8214.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"/Users/m8dotpie/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8214.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"/Users/m8dotpie/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8214.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"/Users/m8dotpie/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8214.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"/Users/m8dotpie/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8214.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug//CMakeFiles/progress.marks
@@ -117,6 +162,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named my_lcmtypes.sources
+
+# Build rule for target.
+my_lcmtypes.sources: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_lcmtypes.sources
+.PHONY : my_lcmtypes.sources
+
+# fast build rule for target.
+my_lcmtypes.sources/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lcmtypes.sources.dir/build.make CMakeFiles/my_lcmtypes.sources.dir/build
+.PHONY : my_lcmtypes.sources/fast
+
+#=============================================================================
+# Target rules for targets named my_lcmtypes
+
+# Build rule for target.
+my_lcmtypes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_lcmtypes
+.PHONY : my_lcmtypes
+
+# fast build rule for target.
+my_lcmtypes/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lcmtypes.dir/build.make CMakeFiles/my_lcmtypes.dir/build
+.PHONY : my_lcmtypes/fast
+
+#=============================================================================
 # Target rules for targets named pendulum_prj
 
 # Build rule for target.
@@ -129,29 +200,29 @@ pendulum_prj/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pendulum_prj.dir/build.make CMakeFiles/pendulum_prj.dir/build
 .PHONY : pendulum_prj/fast
 
-src/exlcm_example_t.o: src/exlcm_example_t.c.o
-.PHONY : src/exlcm_example_t.o
+exlcm_example_t.o: exlcm_example_t.c.o
+.PHONY : exlcm_example_t.o
 
 # target to build an object file
-src/exlcm_example_t.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pendulum_prj.dir/build.make CMakeFiles/pendulum_prj.dir/src/exlcm_example_t.c.o
-.PHONY : src/exlcm_example_t.c.o
+exlcm_example_t.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lcmtypes.dir/build.make CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.o
+.PHONY : exlcm_example_t.c.o
 
-src/exlcm_example_t.i: src/exlcm_example_t.c.i
-.PHONY : src/exlcm_example_t.i
+exlcm_example_t.i: exlcm_example_t.c.i
+.PHONY : exlcm_example_t.i
 
 # target to preprocess a source file
-src/exlcm_example_t.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pendulum_prj.dir/build.make CMakeFiles/pendulum_prj.dir/src/exlcm_example_t.c.i
-.PHONY : src/exlcm_example_t.c.i
+exlcm_example_t.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lcmtypes.dir/build.make CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.i
+.PHONY : exlcm_example_t.c.i
 
-src/exlcm_example_t.s: src/exlcm_example_t.c.s
-.PHONY : src/exlcm_example_t.s
+exlcm_example_t.s: exlcm_example_t.c.s
+.PHONY : exlcm_example_t.s
 
 # target to generate assembly for a file
-src/exlcm_example_t.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pendulum_prj.dir/build.make CMakeFiles/pendulum_prj.dir/src/exlcm_example_t.c.s
-.PHONY : src/exlcm_example_t.c.s
+exlcm_example_t.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lcmtypes.dir/build.make CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.s
+.PHONY : exlcm_example_t.c.s
 
 src/main.o: src/main.c.o
 .PHONY : src/main.o
@@ -184,11 +255,17 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... my_lcmtypes.sources"
+	@echo "... my_lcmtypes"
 	@echo "... pendulum_prj"
-	@echo "... src/exlcm_example_t.o"
-	@echo "... src/exlcm_example_t.i"
-	@echo "... src/exlcm_example_t.s"
+	@echo "... exlcm_example_t.o"
+	@echo "... exlcm_example_t.i"
+	@echo "... exlcm_example_t.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

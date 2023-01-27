@@ -4,7 +4,7 @@
 # compile C with /Library/Developer/CommandLineTools/usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/m8dotpie/Work/pendulum.prj/include -isystem /usr/local/include
+C_INCLUDES = -I/Users/m8dotpie/Work/pendulum.prj/include -I/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug -isystem /usr/local/include
 
 C_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu11
 

@@ -63,6 +63,7 @@ CMAKE_BINARY_DIR = /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/my_lcmtypes.dir/all
 all: CMakeFiles/pendulum_prj.dir/all
 .PHONY : all
 
@@ -71,22 +72,76 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/my_lcmtypes.sources.dir/clean
+clean: CMakeFiles/my_lcmtypes.dir/clean
 clean: CMakeFiles/pendulum_prj.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/my_lcmtypes.sources.dir
+
+# All Build rule for target.
+CMakeFiles/my_lcmtypes.sources.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lcmtypes.sources.dir/build.make CMakeFiles/my_lcmtypes.sources.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lcmtypes.sources.dir/build.make CMakeFiles/my_lcmtypes.sources.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles --progress-num=4 "Built target my_lcmtypes.sources"
+.PHONY : CMakeFiles/my_lcmtypes.sources.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/my_lcmtypes.sources.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/my_lcmtypes.sources.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/my_lcmtypes.sources.dir/rule
+
+# Convenience name for target.
+my_lcmtypes.sources: CMakeFiles/my_lcmtypes.sources.dir/rule
+.PHONY : my_lcmtypes.sources
+
+# clean rule for target.
+CMakeFiles/my_lcmtypes.sources.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lcmtypes.sources.dir/build.make CMakeFiles/my_lcmtypes.sources.dir/clean
+.PHONY : CMakeFiles/my_lcmtypes.sources.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/my_lcmtypes.dir
+
+# All Build rule for target.
+CMakeFiles/my_lcmtypes.dir/all: CMakeFiles/my_lcmtypes.sources.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lcmtypes.dir/build.make CMakeFiles/my_lcmtypes.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lcmtypes.dir/build.make CMakeFiles/my_lcmtypes.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target my_lcmtypes"
+.PHONY : CMakeFiles/my_lcmtypes.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/my_lcmtypes.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/my_lcmtypes.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/my_lcmtypes.dir/rule
+
+# Convenience name for target.
+my_lcmtypes: CMakeFiles/my_lcmtypes.dir/rule
+.PHONY : my_lcmtypes
+
+# clean rule for target.
+CMakeFiles/my_lcmtypes.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lcmtypes.dir/build.make CMakeFiles/my_lcmtypes.dir/clean
+.PHONY : CMakeFiles/my_lcmtypes.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/pendulum_prj.dir
 
 # All Build rule for target.
-CMakeFiles/pendulum_prj.dir/all:
+CMakeFiles/pendulum_prj.dir/all: CMakeFiles/my_lcmtypes.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pendulum_prj.dir/build.make CMakeFiles/pendulum_prj.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pendulum_prj.dir/build.make CMakeFiles/pendulum_prj.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target pendulum_prj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target pendulum_prj"
 .PHONY : CMakeFiles/pendulum_prj.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pendulum_prj.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/pendulum_prj.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/pendulum_prj.dir/rule

@@ -17,6 +17,58 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="my_lcmtypes.sources">
+				<Option working_dir="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 my_lcmtypes.sources"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="my_lcmtypes">
+				<Option output="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/libmy_lcmtypes.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/m8dotpie/Work/pendulum.prj/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 my_lcmtypes"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="my_lcmtypes/fast">
+				<Option output="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/libmy_lcmtypes.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/m8dotpie/Work/pendulum.prj/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 my_lcmtypes/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="pendulum_prj">
 				<Option output="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/pendulum_prj" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug"/>
@@ -25,6 +77,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/m8dotpie/Work/pendulum.prj/include"/>
+					<Add directory="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -46,6 +99,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/m8dotpie/Work/pendulum.prj/include"/>
+					<Add directory="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -79,9 +133,55 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
-		<Unit filename="/Users/m8dotpie/Work/pendulum.prj/src/exlcm_example_t.c">
-			<Option target="pendulum_prj"/>
+		<Unit filename="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/exlcm_example_t.c">
+			<Option target="my_lcmtypes"/>
+		</Unit>
+		<Unit filename="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/exlcm_example_t.h">
+			<Option target="my_lcmtypes"/>
+		</Unit>
+		<Unit filename="/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/exlcm_example_t.h.rule">
+			<Option target="my_lcmtypes"/>
 		</Unit>
 		<Unit filename="/Users/m8dotpie/Work/pendulum.prj/src/main.c">
 			<Option target="pendulum_prj"/>
