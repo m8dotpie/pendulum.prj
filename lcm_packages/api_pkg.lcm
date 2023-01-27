@@ -1,4 +1,4 @@
-package motor;
+package api;
 
 struct command {
     uint8_t code;
