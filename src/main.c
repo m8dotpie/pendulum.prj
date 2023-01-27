@@ -1,7 +1,7 @@
-#include <lcm/lcm.h>
-#include <unistd.h>
-#include <stdio.h>
+#include "server.h"
 
 int main(int argc, char ** argv) {
+    server_start();
+    server_stop();
     return 0;
 }

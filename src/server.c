@@ -4,8 +4,21 @@
 
 #include "server.h"
 
-int server_send_message(int command, int length, char* msg) {
-    // init struct and publish it
+enum {
+    SERVER_START,
+    SERVER_ERROR,
+    SERVER_REBOOT,
+    SERVER_STOP,
+};
+
+int server_send_message(int cmd, int length, char* msg) {
+    server_status_t status;
+    status.code = cmd;
+    status.length = length;
+    status.msg = malloc(sizeof(char) * length);
+    strcpy(status.msg, msg);
+
+    server_status_t_publish(srv_config.api_lcm, srv_config.SRV_CHANNEL, &status);
     return 0;
 }
 
@@ -16,17 +29,19 @@ int server_send_hardware() {
 int server_start() {
     srv_config.active = 1; // server is active now
 
-    // channel for hardware communication
+    srv_config.API_CHANNEL = malloc(sizeof(char) * 7);
+    srv_config.API_CHANNEL = "APIDATA";
+    srv_config.API_CHANNEL = malloc(sizeof(char) * 6);
+    srv_config.API_CHANNEL = "SERVER";
+
+    // channel for communication
     srv_config.api_url = malloc(sizeof(char) * 27);
     srv_config.api_url = "udpm://224.0.0.0:7667?ttl=1";
 
-    // channel for server communication
-    srv_config.srv_url = malloc(sizeof(char) * 27);
-    srv_config.srv_url = "udpm://224.0.0.0:7668?ttl=1";
-
     // start lcm, etc
     srv_config.api_lcm = lcm_create(srv_config.api_url);
-    srv_config.srv_lcm = lcm_create(srv_config.srv_url);
+
+    server_send_message(SERVER_START, 7, "SUCCESS");
 
     return 0;
 }
@@ -42,8 +57,8 @@ int server_run() {
 
 int server_stop() {
     srv_config.active = 0;
+    server_send_message(SERVER_STOP, 7, "SUCCESS");
     lcm_destroy(srv_config.api_lcm);
-    lcm_destroy(srv_config.srv_lcm);
     // interrupt hardware, etc
 
     return 0;

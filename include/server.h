@@ -7,13 +7,17 @@
 
 #include "stdlib.h"
 #include "lcm/lcm.h"
+#include "api_command_t.h"
+#include "api_response_t.h"
+#include "server_command_t.h"
+#include "server_status_t.h"
 
 struct {
     int active;
     char* api_url;
-    char* srv_url;
     lcm_t* api_lcm;
-    lcm_t* srv_lcm;
+    char* API_CHANNEL;
+    char* SRV_CHANNEL;
 } srv_config;
 
 int server_start();

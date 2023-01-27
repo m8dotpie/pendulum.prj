@@ -5,8 +5,8 @@ struct command_t
     int8_t code;
 }
 
-struct error_t {
+struct status_t {
     int8_t code;
-    int16_t msg_size;
+    int16_t length;
     string msg;
 }
