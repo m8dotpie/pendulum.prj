@@ -1,0 +1,15 @@
+package motor;
+
+struct command {
+    uint8_t code;
+    char[7] msg;
+}
+
+struct response {
+    uint16_t p_distance;
+    uint16_t p_angle;
+    uint8_t m_angle;
+    uint16_t m_torque;
+    uint16_t m_speed;
+    uint16_t m_position;
+}
