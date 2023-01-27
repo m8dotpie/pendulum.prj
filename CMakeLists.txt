@@ -34,7 +34,7 @@ install(TARGETS my_lcmtypes
         )
 
 
-add_executable(pendulum_prj src/main.c)
+add_executable(pendulum_prj src/main.c src/listener.c include/listener.h include/main.h)
 
 target_link_libraries(pendulum_prj lcm)
 lcm_target_link_libraries(pendulum_prj my_lcmtypes)

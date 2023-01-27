@@ -1,5 +1,8 @@
 #include <lcm/lcm.h>
 #include "exlcm_example_t.h"
+#include <unistd.h>
+#include <stdio.h>
+#include "main.h"
 
 int
 main(int argc, char ** argv)
@@ -21,6 +24,6 @@ main(int argc, char ** argv)
     my_data.name = "example string";
     my_data.enabled = 1;
     exlcm_example_t_publish(lcm, "EXAMPLE", &my_data);
+
     lcm_destroy(lcm);
-    return 0;
 }

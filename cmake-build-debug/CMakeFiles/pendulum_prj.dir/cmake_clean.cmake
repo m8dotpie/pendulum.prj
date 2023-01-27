@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/pendulum_prj.dir/src/listener.c.o"
+  "CMakeFiles/pendulum_prj.dir/src/listener.c.o.d"
   "CMakeFiles/pendulum_prj.dir/src/main.c.o"
   "CMakeFiles/pendulum_prj.dir/src/main.c.o.d"
   "pendulum_prj"

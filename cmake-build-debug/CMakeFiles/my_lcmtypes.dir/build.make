@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/m8dotpie/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8214.51/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = /home/dom_iva/clion-2022.3.1/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = "/Users/m8dotpie/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8214.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
+RM = /home/dom_iva/clion-2022.3.1/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/m8dotpie/Work/pendulum.prj
+CMAKE_SOURCE_DIR = /home/dom_iva/Programms/pendulum/pendulum.prj
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug
+CMAKE_BINARY_DIR = /home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/my_lcmtypes.dir/depend.make
@@ -69,9 +69,9 @@ include CMakeFiles/my_lcmtypes.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/my_lcmtypes.dir/flags.make
 
-exlcm_example_t.h: /Users/m8dotpie/Work/pendulum.prj/lcm_packages/example_t.lcm
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating exlcm_example_t.h, exlcm_example_t.c"
-	/usr/local/bin/lcm-gen --c --c-cpath /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug --c-hpath /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug --c-export-symbol MY_LCMTYPES_EXPORT --c-export-include my_lcmtypes_export.h /Users/m8dotpie/Work/pendulum.prj/lcm_packages/example_t.lcm
+exlcm_example_t.h: /home/dom_iva/Programms/pendulum/pendulum.prj/lcm_packages/example_t.lcm
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating exlcm_example_t.h, exlcm_example_t.c"
+	/usr/local/bin/lcm-gen --c --c-cpath /home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug --c-hpath /home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug --c-export-symbol MY_LCMTYPES_EXPORT --c-export-include my_lcmtypes_export.h /home/dom_iva/Programms/pendulum/pendulum.prj/lcm_packages/example_t.lcm
 
 exlcm_example_t.c: exlcm_example_t.h
 	@$(CMAKE_COMMAND) -E touch_nocreate exlcm_example_t.c
@@ -79,16 +79,16 @@ exlcm_example_t.c: exlcm_example_t.h
 CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.o: CMakeFiles/my_lcmtypes.dir/flags.make
 CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.o: exlcm_example_t.c
 CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.o: CMakeFiles/my_lcmtypes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.o -MF CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.o.d -o CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.o -c /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/exlcm_example_t.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.o -MF CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.o.d -o CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.o -c /home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug/exlcm_example_t.c
 
 CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/exlcm_example_t.c > CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug/exlcm_example_t.c > CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.i
 
 CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/exlcm_example_t.c -o CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug/exlcm_example_t.c -o CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.s
 
 # Object files for target my_lcmtypes
 my_lcmtypes_OBJECTS = \
@@ -100,7 +100,7 @@ my_lcmtypes_EXTERNAL_OBJECTS =
 libmy_lcmtypes.a: CMakeFiles/my_lcmtypes.dir/exlcm_example_t.c.o
 libmy_lcmtypes.a: CMakeFiles/my_lcmtypes.dir/build.make
 libmy_lcmtypes.a: CMakeFiles/my_lcmtypes.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libmy_lcmtypes.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libmy_lcmtypes.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/my_lcmtypes.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/my_lcmtypes.dir/link.txt --verbose=$(VERBOSE)
 
@@ -114,6 +114,6 @@ CMakeFiles/my_lcmtypes.dir/clean:
 
 CMakeFiles/my_lcmtypes.dir/depend: exlcm_example_t.c
 CMakeFiles/my_lcmtypes.dir/depend: exlcm_example_t.h
-	cd /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/m8dotpie/Work/pendulum.prj /Users/m8dotpie/Work/pendulum.prj /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug /Users/m8dotpie/Work/pendulum.prj/cmake-build-debug/CMakeFiles/my_lcmtypes.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dom_iva/Programms/pendulum/pendulum.prj /home/dom_iva/Programms/pendulum/pendulum.prj /home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug /home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug /home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug/CMakeFiles/my_lcmtypes.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/my_lcmtypes.dir/depend
 

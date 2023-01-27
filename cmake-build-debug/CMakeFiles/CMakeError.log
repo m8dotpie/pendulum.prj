@@ -1,11 +1,16 @@
-Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /Library/Developer/CommandLineTools/usr/bin/cc 
-Build flags: 
-Id flags:  
+Performing C SOURCE FILE Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY failed with the following output:
+Change Dir: /home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug/CMakeFiles/CMakeTmp
 
-The output was:
-1
-ld: library not found for -lSystem
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_cd841/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_cd841.dir/build.make CMakeFiles/cmTC_cd841.dir/build
+gmake[1]: Entering directory '/home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cd841.dir/src.c.o
+/usr/bin/cc -DCOMPILER_HAS_HIDDEN_INLINE_VISIBILITY  -fdiagnostics-color=always   -fvisibility-inlines-hidden -std=gnu11 -o CMakeFiles/cmTC_cd841.dir/src.c.o -c /home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug/CMakeFiles/CMakeTmp/src.c
+[01m[Kcc1:[m[K [01;35m[Kwarning: [m[Kcommand-line option '[01m[K-fvisibility-inlines-hidden[m[K' is valid for C++/ObjC++ but not for C
+Linking C executable cmTC_cd841
+/home/dom_iva/clion-2022.3.1/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd841.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_cd841.dir/src.c.o -o cmTC_cd841 
+gmake[1]: Leaving directory '/home/dom_iva/Programms/pendulum/pendulum.prj/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
+Source file was:
+int main(void) { return 0; }
