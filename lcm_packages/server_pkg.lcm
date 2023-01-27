@@ -1,0 +1,12 @@
+package server;
+
+struct command_t
+{
+    int8_t code;
+}
+
+struct error_t {
+    uint8_t code;
+    uint16_t msg_size;
+    char* msg;
+}
