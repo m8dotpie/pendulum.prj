@@ -6,6 +6,22 @@
 
 struct SERVER_CFG srv_config = {};
 
+static
+void handle_api_command(const lcm_recv_buf_t *rbuf, const char *channel,
+                        const api_command_t *msg, void *user) {
+    if (srv_config.VERBOSE) {
+        printf("API event happened\n");
+    }
+}
+
+static
+void handle_server_command(const lcm_recv_buf_t *rbuf, const char *channel,
+                           const server_command_t *msg, void *user) {
+    if (srv_config.VERBOSE) {
+        printf("Server event happened\n");
+    }
+}
+
 int server_send_message(int cmd, int length, char* msg) {
     server_status_t status;
     status.code = cmd;
@@ -13,7 +29,7 @@ int server_send_message(int cmd, int length, char* msg) {
     status.msg = malloc(sizeof(char) * length);
     strcpy(status.msg, msg);
 
-    server_status_t_publish(config.lcm, config.SRV_CHANNEL, &status);
+    server_status_t_publish(srv_config.api_lcm, srv_config.SRV_CHANNEL, &status);
     return 0;
 }
 
@@ -24,75 +40,79 @@ int server_send_hardware() {
 int server_start() {
     srv_config.active = 1; // server is active now
 
-    config.API_CHANNEL = malloc(sizeof(char) * 3);
-    config.API_CHANNEL = "API";
-    config.SRV_CHANNEL = malloc(sizeof(char) * 6);
-    config.SRV_CHANNEL = "SERVER";
+    srv_config.API_CHANNEL = malloc(sizeof(char) * 3);
+    srv_config.API_CHANNEL = "API";
+    srv_config.SRV_CHANNEL = malloc(sizeof(char) * 6);
+    srv_config.SRV_CHANNEL = "SERVER";
+    srv_config.VERBOSE = 1; // Logging level
 
     // channel for communication
-    config.api_url = malloc(sizeof(char) * 27);
-    config.api_url = "udpm://224.0.0.0:7667?ttl=1";
+    srv_config.msg_url = malloc(sizeof(char) * 27);
+    srv_config.msg_url = "udpm://224.0.0.0:7667?ttl=1";
 
-    // start lcm, etc
-    config.lcm = lcm_create(config.api_url);
+    // Input channels initialization
+    srv_config.api_sub = api_command_t_subscribe(
+            srv_config.api_lcm,
+            srv_config.API_CHANNEL,
+            &handle_api_command,
+            NULL
+    );
+    srv_config.srv_sub = server_command_t_subscribe(
+            srv_config.srv_lcm,
+            srv_config.SRV_CHANNEL,
+            &handle_server_command,
+            NULL
+    );
+
+    // start api_lcm, etc
+    srv_config.api_lcm = lcm_create(srv_config.msg_url);
+    srv_config.srv_lcm = lcm_create(srv_config.msg_url);
 
     server_send_message(SERVER_START, 7, "SUCCESS");
 
     return 0;
 }
 
-static
-void handle_api_command(const lcm_recv_buf_t *rbuf, const char *channel,
-                        const api_command_t *msg, void *user) {
-    printf("API event happened\n");
-}
-
-static
-void handle_server_command(const lcm_recv_buf_t *rbuf, const char *channel,
-                           const server_command_t *msg, void *user) {
-    printf("Server event happened\n");
-}
-
-int read_packet() {
-    lcm_handle(config.lcm);
-
+int read_packet(lcm_t* input_lcm) {
+    // lcm_handle(input_lcm);
+    // Here should be a check for
+    // incoming packages
+    // either in separate thread
+    // or one-time check for messages
     return 0;
 }
 
 int monitor_packets () {
-    api_command_t_subscription_t *api_sub = api_command_t_subscribe(
-            config.lcm,
-            config.API_CHANNEL,
-            &handle_api_command,
-            NULL
-    );
-    server_command_t_subscription_t *srv_sub = server_command_t_subscribe(
-            config.lcm,
-            config.SRV_CHANNEL,
-            &handle_server_command,
-            NULL
-    );
-
-    if (read_packet())
-        return 1;
-
-    api_command_t_unsubscribe(config.lcm, api_sub);
-    server_command_t_unsubscribe(config.lcm, srv_sub);
+    read_packet(srv_config.api_lcm);
+    read_packet(srv_config.srv_lcm);
 
     return 0;
 }
 
 int server_run() {
-    while (config.active) {
+    while (srv_config.active) {
         monitor_packets();
     }
 }
 
 int server_stop() {
-    config.active = 0;
-    server_send_message(SERVER_STOP, 7, "SUCCESS");
-    lcm_destroy(config.lcm);
+
     // interrupt hardware, etc
+    // IT IS IMPORTANT TO INTERRUPT
+    // HARDWARE BEFORE SHUTTING DOWN
+    // THE SERVER
+
+    // shutdown server
+    srv_config.active = 0;
+    server_send_message(SERVER_STOP, 7, "SUCCESS");
+
+    // unsubscribe from both servers
+    api_command_t_unsubscribe(srv_config.api_lcm, srv_config.api_sub);
+    server_command_t_unsubscribe(srv_config.api_lcm, srv_config.srv_sub);
+
+    // shutdown both lcms
+    lcm_destroy(srv_config.api_lcm);
+    lcm_destroy(srv_config.srv_lcm);
 
     return 0;
 }

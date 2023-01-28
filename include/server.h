@@ -14,13 +14,17 @@
 
 struct SERVER_CFG{
     int active;
-    char* api_url;
-    lcm_t* lcm;
+    char* msg_url;
+    lcm_t* api_lcm;
+    lcm_t* srv_lcm;
     char* API_CHANNEL;
     char* SRV_CHANNEL;
+    api_command_t_subscription_t* api_sub;
+    server_command_t_subscription_t* srv_sub;
+    int VERBOSE;
 };
 
-extern struct SERVER_CFG config;
+extern struct SERVER_CFG srv_config;
 
 enum {
     SERVER_START,
