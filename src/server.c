@@ -4,12 +4,7 @@
 
 #include "server.h"
 
-enum {
-    SERVER_START,
-    SERVER_ERROR,
-    SERVER_REBOOT,
-    SERVER_STOP,
-};
+struct SERVER_CFG srv_config = {};
 
 int server_send_message(int cmd, int length, char* msg) {
     server_status_t status;
