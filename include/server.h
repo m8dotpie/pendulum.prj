@@ -12,13 +12,15 @@
 #include "server_command_t.h"
 #include "server_status_t.h"
 
-struct SERVER_CFG {
+struct SERVER_CFG{
     int active;
     char* api_url;
-    lcm_t* api_lcm;
+    lcm_t* lcm;
     char* API_CHANNEL;
     char* SRV_CHANNEL;
 };
+
+extern struct SERVER_CFG config;
 
 enum {
     SERVER_START,
