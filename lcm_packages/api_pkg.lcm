@@ -1,11 +1,41 @@
 package api;
 
+/*
+ * API commands
+ *      Code 1 -- Turn on the pendulum
+ *          Data: NULL
+ *
+ *      Code 2 -- Turn off the pendulum.
+ *          Data:
+ *              data[0] == isForced. If 0, then server waits until all commands will be executed,
+ *              then turn off the pendulum. Otherwise, kill the pendulum.
+ *              data[1] == isRestart. If not 0, then restarts the pendulum.
+ *
+ *      Code 4 -- Initialization. Initialize the pendulum.
+ *          Data: NULL
+ *
+ *      Code 5-10 -- Pendulum control commands. The copy from the motor sheet.
+ */
+
 struct command_t {
     int8_t code;
-    string msg;
+    int8_t data[7];
 }
 
+/*
+ * API response codes
+ *      Code 0 -- "Default". Pendulum is working in a default mode
+ *      Code 1 -- "Initialization". The state right after initialization
+ *      Code 2 -- "SafetyMode". The pendulum performs in a safe mode
+ *      Code 3 -- "PendulumShutDown". The pendulum is turned off
+ *      Code 4 -- "NotInitialized". The pendulum is not initialized
+ */
+
+
 struct response_t {
+    int8_t code;
+    int16_t length;
+    string msg;
     int16_t p_distance;
     int16_t p_angle;
     int8_t m_angle;

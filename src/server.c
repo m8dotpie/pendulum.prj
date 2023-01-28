@@ -22,6 +22,7 @@ void handle_server_command(const lcm_recv_buf_t *rbuf, const char *channel,
     }
 }
 
+
 int server_send_message(int cmd, int length, char* msg) {
     server_status_t status;
     status.code = cmd;
@@ -50,6 +51,10 @@ int server_start() {
     srv_config.msg_url = malloc(sizeof(char) * 27);
     srv_config.msg_url = "udpm://224.0.0.0:7667?ttl=1";
 
+    // start api_lcm, etc
+    srv_config.api_lcm = lcm_create(srv_config.msg_url);
+    srv_config.srv_lcm = lcm_create(srv_config.msg_url);
+
     // Input channels initialization
     srv_config.api_sub = api_command_t_subscribe(
             srv_config.api_lcm,
@@ -64,21 +69,31 @@ int server_start() {
             NULL
     );
 
-    // start api_lcm, etc
-    srv_config.api_lcm = lcm_create(srv_config.msg_url);
-    srv_config.srv_lcm = lcm_create(srv_config.msg_url);
-
     server_send_message(SERVER_START, 7, "SUCCESS");
 
     return 0;
 }
 
 int read_packet(lcm_t* input_lcm) {
-    // lcm_handle(input_lcm);
-    // Here should be a check for
-    // incoming packages
-    // either in separate thread
-    // or one-time check for messages
+    // TODO: separate thread is better
+    int lcm_fd = lcm_get_fileno(input_lcm);
+    fd_set fds;
+    FD_ZERO(&fds);
+    FD_SET(lcm_fd, &fds);
+
+    // wait a limited amount of time for an incoming message
+    struct timeval timeout = {
+            0,  // seconds
+            100   // microseconds
+    };
+    int status = select(lcm_fd + 1, &fds, 0, 0, &timeout);
+
+    if (0 == status) {
+        // no messages came
+    } else if (FD_ISSET(lcm_fd, &fds)) {
+        // LCM has events ready to be processed.
+        lcm_handle(input_lcm);
+    }
     return 0;
 }
 
