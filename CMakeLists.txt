@@ -12,6 +12,8 @@ lcm_wrap_types(
         C_HEADERS c_headers
         lcm_packages/api_pkg.lcm
         lcm_packages/server_pkg.lcm
+        lcm_packages/response_pkg.lcm
+        lcm_packages/request_pkg.lcm
 )
 
 lcm_add_library(my_lcmtypes C ${c_sources} ${c_headers})
@@ -32,7 +34,7 @@ install(TARGETS my_lcmtypes
         LIBRARY DESTINATION lib${LIB_SUFFIX}
         ARCHIVE DESTINATION lib${LIB_SUFFIX}
         INCLUDES DESTINATION include
-        )
+)
 
 
 add_executable(pendulum_prj src/main.c include/server.h src/server.c)

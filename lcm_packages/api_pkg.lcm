@@ -24,11 +24,11 @@ struct command_t {
 
 /*
  * API response codes
- *      Code 0 -- "Default". Pendulum is working in a default mode
- *      Code 1 -- "Initialization". The state right after initialization
- *      Code 2 -- "SafetyMode". The pendulum performs in a safe mode
- *      Code 3 -- "PendulumShutDown". The pendulum is turned off
- *      Code 4 -- "NotInitialized". The pendulum is not initialized
+ *      Code 0 -- "API_DEFAULT". Pendulum is working in a default mode
+ *      Code 1 -- "API_INIT". The state right after initialization
+ *      Code 2 -- "API_STOP". The pendulum is turned off
+ *      Code 3 -- "NotInitialized". The pendulum is not initialized
+ *      Code 4 -- "API_SAFE". The pendulum performs in a safe mode
  */
 
 
