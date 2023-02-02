@@ -2,20 +2,36 @@
 
 struct SERVER_CFG srv_config = {};
 
+void handle_api_request(const lcm_recv_buf_t* rbuf, const request_t* msg) {
+    if (msg->type != REQUEST_T_API) {
+        return;
+    }
+
+    printf("Request to API with code: %d\n", msg->code);
+}
+
+void handle_srv_request(const lcm_recv_buf_t* rbuf, const request_t* msg) {
+    if (msg->type != REQUEST_T_SRV) {
+        return;
+    }
+
+    printf("Request to SRV with code: %d\n", msg->code);
+    if (msg->code == REQUEST_SRV_SHUTDOWN) {
+        server_stop();
+    }
+    else if (msg->code == REQUEST_SRV_STATUS) {
+        server_send_message(RESPONSE_T_OK, RESPONSE_OK_RUNNING, 0, NULL);
+    }
+}
+
 static
 void handle_request(const lcm_recv_buf_t *rbuf, const char *channel,
                     const request_t *msg, void *user) {
     if (msg->type == REQUEST_T_API) {
-        printf("Request with code %d for API\n", msg->code);
+        handle_api_request(rbuf, msg);
     }
     if (msg->type == REQUEST_T_SRV) {
-        printf("Request with code %d for SERVER\n", msg->code);
-        if (msg->code == REQUEST_SRV_SHUTDOWN) {
-            server_stop();
-        }
-        else if (msg->code == REQUEST_SRV_STATUS) {
-            server_send_message(RESPONSE_T_OK, RESPONSE_OK_RUNNING, 0, NULL);
-        }
+        handle_srv_request(rbuf, msg);
     }
 }
 
